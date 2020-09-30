@@ -1,17 +1,28 @@
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+import {
+  primary,
+  secondary,
+  alt,
+  contentBackground,
+  white,
+  fontMedium,
+  fontLarge,
+  fontIcon,
+} from "../../../theme";
+
 // Content Component //
 export const StyledContainer = styled.div`
   width: 100%:
   height: 100%;
   flex-basis: 80%;
-  background-color: #e5e5e5;
+  background-color: ${contentBackground};
 `;
 
 // EditNote Component //
 export const StyledCard = styled.div`
-  background-color: white;
+  background-color: ${white};
   height: auto;
   border-radius: 6px;
   box-shadow: 0px 2px 10px rgba(26, 26, 53, 0.1);
@@ -22,19 +33,19 @@ export const StyledTitleInput = styled.input<any>`
   width: 100%;
   font-size: 22px;
   font-weight: 800;
-  color: #270050;
+  color: ${primary};
   padding: 10px 0;
   border: unset;
   &::placeholder {
-    color: #938bee;
+    color: ${secondary};
   }
   &:focus {
     outline: unset;
   }
 `;
 export const StyledContentTextArea = styled.textarea`
-  color: #938bee;
-  font-size: 16px;
+  color: ${secondary};
+  font-size: ${fontLarge};
   font-family: Arial;
   line-height: 24px;
   width: 100%;
@@ -45,9 +56,9 @@ export const StyledContentTextArea = styled.textarea`
   }
 `;
 const StyledButton = styled.button`
-  background: #938bee;
+  background: ${secondary};
   border-radius: 6px;
-  font-size: 14px;
+  font-size: ${fontMedium};
   font-weight: 800;
   line-height: 16.8px;
   text-align: left;
@@ -66,20 +77,20 @@ const StyledButton = styled.button`
   }
 `;
 export const StyledSavePromiseButton = styled(StyledButton)`
-  background: #5326a5;
-  color: white;
+  background: ${alt};
+  color: ${white};
 `;
 export const StyledSaveCallbackButton = styled(StyledButton)`
-  background: #938bee;
-  color: white;
+  background: ${secondary};
+  color: ${white};
 `;
 export const StyledSaveErrorButton = styled(StyledButton)`
-  background: white;
-  color: #5326a5;
-  border: solid 1px #5326a5;
+  background: ${white};
+  color: ${alt};
+  border: solid 1px ${alt};
   &:hover {
-    background-color: #5326a5;
-    color: white;
+    background-color: ${alt};
+    color: ${white};
   }
 `;
 
@@ -88,27 +99,27 @@ export const StyledBar = styled.div`
   height: 56px;
   width: 100%;
   display: flex;
-  background-color: white;
+  background-color: ${white};
 `;
 export const StyledTitle = styled.h2`
-  font-size: 16px;
+  font-size: ${fontLarge};
   font-weight: 600;
-  color: #938bee;
+  color: ${secondary};
   margin: auto 0;
   padding: 0 15px;
 `;
 export const StyledPlusIcon = styled(FontAwesomeIcon)`
-  color: #3b0275;
+  color: ${primary};
   position: absolute;
   right: 15px;
-  font-size: 1em;
-  border: solid 1px #938bee;
+  font-size: ${fontIcon};
+  border: solid 1px ${secondary};
   border-radius: 50%;
   padding: 10px;
   top: 10px;
   &:hover {
-    color: white;
-    background-color: #3b0275;
+    color: ${white};
+    background-color: ${primary};
     cursor: pointer;
   }
 `;

@@ -2,6 +2,16 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { ItemProps } from "../types";
+import {
+  primary,
+  secondary,
+  alt,
+  white,
+  fontSmall,
+  fontMedium,
+  fontLarge,
+  fontIcon,
+} from "../../../theme";
 
 // LeftMenu Component //
 export const TitleWrapper = styled.div`
@@ -11,8 +21,8 @@ export const TitleWrapper = styled.div`
 `;
 export const StyledMenuTitle = styled.h1`
   font-weight: 800;
-  font-size: 16px;
-  color: white;
+  font-size: ${fontLarge};
+  color: ${white};
   text-align: left;
 `;
 export const StyledSearchIcon = styled(FontAwesomeIcon)`
@@ -20,7 +30,7 @@ export const StyledSearchIcon = styled(FontAwesomeIcon)`
 `;
 export const StyledMenuContainer = styled.div`
   height: 100%;
-  background-color: #3b0275;
+  background-color: ${primary};
   position: relative;
   overflow-x: hidden;
   flex-basis: 20%;
@@ -34,13 +44,11 @@ export const StyledItem = styled.div<ItemProps>`
   padding: 0 15px;
   border: unset;
   border-bottom: ${({ hasBottomBorder }) =>
-    hasBottomBorder ? "solid 1px #5326a5" : "unset"};
+    hasBottomBorder ? `solid 1px ${alt}` : "unset"};
   padding: 0 15px;
-  background-color: ${({ hasActive }) =>
-    hasActive ? "#5326A5" : "transparent"};
+  background-color: ${({ hasActive }) => (hasActive ? alt : "transparent")};
   &:hover {
-    background-color: ${({ hasHover }) =>
-      hasHover ? "#5326A5" : "transparent"};
+    background-color: ${({ hasHover }) => (hasHover ? alt : "transparent")};
     cursor: pointer;
   }
 `;
@@ -53,16 +61,16 @@ export const NewNoteWrapper = styled.div`
 `;
 export const StyledNewNoteTitle = styled.h2`
   width: 100%;
-  font-size: 14px;
-  color: white;
+  font-size: ${fontMedium};
+  color: ${white};
   margin: auto 0;
   text-align: left;
 `;
 export const StyledPlusIcon = styled(FontAwesomeIcon)`
-  color: #938bee;
+  color: ${secondary};
   position: absolute;
   right: 15px;
-  font-size: 1em;
+  font-size: ${fontIcon};
 `;
 
 // Note Component //
@@ -74,14 +82,14 @@ export const NoteWrapper = styled.div`
   background-color: transparent;
 `;
 export const StyledNoteTitle = styled.h2`
-  font-size: 14px;
+  font-size: ${fontMedium};
   font-weight: 800;
-  color: white;
+  color: ${white};
 `;
 export const StyledNoteDate = styled.p`
-  font-size: 12px;
+  font-size: ${fontSmall};
   font-weight: 600;
-  color: #938bee;
+  color: ${secondary};
 `;
 
 // Search Component //
@@ -92,18 +100,18 @@ export const SearchWrapper = styled.div`
 `;
 export const StyledSearch = styled.input`
   background-color: transparent;
-  color: white;
+  color: ${white};
   height: 100%;
   width: 100%;
   border: unset;
-  font-size: 16px;
+  font-size: ${fontLarge};
   line-height: 100%;
   &:active,
   &:focus {
     outline: unset;
   }
   &::placeholder {
-    color: #938bee;
+    color: ${secondary};
   }
 `;
 export const StyledSearchIconWrapper = styled.div`
@@ -114,5 +122,5 @@ export const StyledSearchIconWrapper = styled.div`
   position: absolute;
 `;
 export const StyledSearchInputIcon = styled(FontAwesomeIcon)`
-  color: #938bee;
+  color: ${secondary};
 `;
